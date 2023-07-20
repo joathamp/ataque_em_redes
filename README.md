@@ -1,7 +1,7 @@
 Base de Dados das imagens(.box) usadas no treinamento de Ataque em Redes - Daryus
 =============================
 
-Repositório para armazenar os DUMPS usados para o treinamento de Ataque em Redes da [Daryus][1]
+Repositório para armazenar os DUMPS usados para o treinamento de Ataque em Redes da **Daryus**
 
 Dependências
 ------------
@@ -37,16 +37,14 @@ O Laboratório será criado utilizando o [Vagrant][7]. Ferramenta para criar e g
 
 Nesse laboratórios, que está centralizado no arquivo [Vagrantfile][8], serão criadas 4 maquinas com as seguintes características:
 
-Nome       | vCPUs | Memoria RAM | IP            | S.O.¹           | Script de Provisionamento²
----------- |:-----:|:-----------:|:-------------:|:---------------:| -----------------------------
-testing    | 1     | 3072MB      | 192.168.56.10 | centos/8        | [provisionamento/testing.sh][9]
-automation | 1     | 3072MB      | 192.168.56.20 | debian/buster64 | [provisionamento/automation.sh][10]
-logging    | 1     | 4092MB      | 192.168.56.30 | centos/8        | [provisionamento/logging.sh][11]
-validation | 1     | 2048MB      | 192.168.56.40 | debian/buster64 | [provisionamento/validation.sh][12]
+Nome       | vCPUs | Memoria RAM | IP            | S.O.¹           
+---------- |:-----:|:-----------:|:-------------:|:---------------
+SD    | 1     | 3072MB      | 192.168.56.110 | ????        | 
+MR | 1     | 3072MB      | 192.168.56.120 | ???? 
+XXXX    | 1     | 4092MB      | 192.168.56.30 | ????       
+XXXX | 1     | 2048MB      | 192.168.56.40 | ???? 
 
-> **¹**: Esses Sistemas operacionais estão sendo utilizado no formato de Boxes, é a forma como o vagrant chama as imagens do sistema operacional utilizado, sendo que a que vamos utilizar são as imagens preparadas por mim: **4linux/527-testing**, **4linux/527-automation**, **4linux/527-logging** e **4linux/527-validation**. [Vagrant Cloud da 4linux][14]
-
-> **²**: Para o Script de Provisionamento estamos utilizando Shell Script
+> **¹**: Esses Sistemas operacionais estão sendo utilizado no formato de Boxes, é a forma como o vagrant chama as imagens do sistema operacional utilizado, sendo que a que vamos utilizar são as imagens preparadas por mim: **joatham/Daryus_SD**, **joatham/Daryus_MR**, 
 
 
 Para ter acesso as maquinas que usaremos nas Invasoes é necessário fazer o `git clone` desse repositório e realizar a descompactacao dos arquivos, conforme abaixo:
