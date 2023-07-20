@@ -13,23 +13,13 @@ Para a criação do laboratório é necessário ter pré instalado os seguintes 
 
 > Para as máquinas com MAC OS aconselhamos, se possível, que as instalações sejam feitas pelo gerenciador de pacotes **brew**.
 
-DUMPS
+Maquina do Pentester
 -----------
 
 Para que o **Lab** aconteca, estamos levando em consideracao que estamos trabalhando com a modalidade BlackBox, desta forma nem uma informacao nos 'e fornecida:
 
-* f544d0575bbfa40282400188a8b9f868  
 
-[Path] / filename                              MD5 sum
--------------------------------------------------------------------------------
-* Laboratorios_aula_01.ova                  100% f544d0575bbfa40282400188a8b9f868
-* metasploitable-linux-2.0.0.zip	    100% 8825F2509A9B9A58EC66BD65EF83167F
-
-Caracterizando uma maquina completa.
-
-> Caso queiram conferir o HASH, use `md5sum Laboratorios_aula_01.ova`
-
-Nesse laboratório, que está centralizado nas **.OVAs** do [Virtualbox][3], são sugeridas 2 distribuicoes que auxiliam no processo de analise:
+Nesse laboratório, que está centralizado nas **.Box** do [Vagrant][3], são sugeridas 2 distribuicoes que auxiliam no processo de Pentest:
 
 Nome       | vCPUs | Memoria RAM | IP             | S.O.¹           | Link para Download²
 ---------- |:-----:|:-----------:|:--------------:|:---------------:| -----------------------------
@@ -43,12 +33,46 @@ Parrot     | 1     | 3072MB      | 192.168.56.101 | Parrot          | [https://w
 Criação do Laboratório 
 ----------------------
 
-Para ter acesso aos dumps do **CTF** deste laboratorio é necessário fazer o `git clone` desse repositório e realizar a descompactacao dos arquivos, conforme abaixo:
+O Laboratório será criado utilizando o [Vagrant][7]. Ferramenta para criar e gerenciar ambientes virtualizados (baseado em Inúmeros providers) com foco em automação.
+
+Nesse laboratórios, que está centralizado no arquivo [Vagrantfile][8], serão criadas 4 maquinas com as seguintes características:
+
+Nome       | vCPUs | Memoria RAM | IP            | S.O.¹           | Script de Provisionamento²
+---------- |:-----:|:-----------:|:-------------:|:---------------:| -----------------------------
+testing    | 1     | 3072MB      | 192.168.56.10 | centos/8        | [provisionamento/testing.sh][9]
+automation | 1     | 3072MB      | 192.168.56.20 | debian/buster64 | [provisionamento/automation.sh][10]
+logging    | 1     | 4092MB      | 192.168.56.30 | centos/8        | [provisionamento/logging.sh][11]
+validation | 1     | 2048MB      | 192.168.56.40 | debian/buster64 | [provisionamento/validation.sh][12]
+
+> **¹**: Esses Sistemas operacionais estão sendo utilizado no formato de Boxes, é a forma como o vagrant chama as imagens do sistema operacional utilizado, sendo que a que vamos utilizar são as imagens preparadas por mim: **4linux/527-testing**, **4linux/527-automation**, **4linux/527-logging** e **4linux/527-validation**. [Vagrant Cloud da 4linux][14]
+
+> **²**: Para o Script de Provisionamento estamos utilizando Shell Script
+
+
+Para ter acesso as maquinas que usaremos nas Invasoes é necessário fazer o `git clone` desse repositório e realizar a descompactacao dos arquivos, conforme abaixo:
 
 ```bash
-git clone https://github.com/joathamp/pentest_impacta.git
-cd pentest_impacta/
+git clone https://github.com/joathamp/ataque_em_redes.git
+cd ataque_em_redes/
 ```
+
+Por fim, para melhor utilização, abaixo há alguns comandos básicos do vagrant para gerencia das máquinas virtuais.
+
+Comandos                | Descrição
+:----------------------:| ---------------------------------------
+`vagrant init`          | Gera o VagrantFile
+`vagrant box add <box>` | Baixar imagem do sistema
+`vagrant box status`    | Verificar o status dos boxes criados
+`vagrant up`            | Cria/Liga as VMs baseado no VagrantFile
+`vagrant provision`     | Provisiona mudanças logicas nas VMs
+`vagrant status`        | Verifica se VM estão ativas ou não.
+`vagrant ssh <vm>`      | Acessa a VM
+`vagrant ssh <vm> -c <comando>` | Executa comando via ssh
+`vagrant reload <vm>`   | Reinicia a VM
+`vagrant halt`          | Desliga as VMs
+
+> Para maiores informações acesse a [Documentação do Vagrant][13]
+
 
 Contato
 ----------------------
