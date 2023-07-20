@@ -1,0 +1,26 @@
+#Curso Ataque em Redes - SD 
+- name: SD
+  cpus: 1
+  memory: 3072
+  ip: 192.168.56.110
+  box: joatham/Daryus_SD
+
+#Curso Ataque em Redes - MR 
+- name: MR
+  cpus: 1
+  memory: 3072
+  ip: 192.168.56.120
+  box: joatham/Daryus_MR
+
+#XXX
+#- name: XXX
+#  cpus: 1
+#  memory: 4092
+#  ip: 192.168.56.130
+
+#XXX
+#- name: XXX
+#  cpus: 1
+#  memory: 2048
+#  ip: 192.168.56.40
+
