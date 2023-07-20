@@ -17,7 +17,6 @@ Precisamos do **VirtualBox** em nossa infraestrutura para gerenciar as máquinas
 
 ## Laboratório:  Instalar e configurar o VirtualBox
 
-![Laboratório](images/lab-aula.png)
 
 Neste laboratório vamos aprender como instalar e configurar o VirtualBox nos sistemas operacionais Windows, Linux e Mac.
 
@@ -25,7 +24,7 @@ Neste laboratório vamos aprender como instalar e configurar o VirtualBox nos si
 
 Para começar, acesse o site do VirtualBox, clique em [Downloads](https://www.virtualbox.org/wiki/Downloads) e clique na opção **Windows hosts**:
 
-![Download do VirtualBox para Windows](images/virtualbox-windows-1.png)
+![Download do VirtualBox para Windows](../Preparacao_Infra/images/virtualbox-windows-1.png)
 
 Clique duas vezes no arquivo executável do instalador e siga as instruções de instalação:
 
@@ -118,7 +117,6 @@ O Git [2] é software utilizado para gerenciar controle de versão, distribuído
 
 ## Laboratório: Instalar o Git
 
-![Laboratório](images/lab-aula.png)
 
 Neste laboratório vamos aprender como instalar o Git nos sistemas operacionais Windows, Linux e Mac.
 
@@ -259,7 +257,6 @@ O Vagrant [5] é um software de automação escrito em Ruby e mantida pela Hashi
 
 ## Laboratório:  instalar o Vagrant
 
-![Laboratório](images/lab-aula.png)
 
 Neste laboratório vamos aprender como instalar o Vagrant nos sistemas operacionais Windows, Linux e Mac.
 
@@ -344,11 +341,10 @@ Abra um **Terminal** no Linux ou no Mac, ou então o **Cygwin64 Terminal** no Wi
 
 > **ATENÇÃO**: para máquinas com menos de 8GB de RAM recomendamos ligar duas máquinas virtuais por vez.
 
-**DevSecOps**: Código **527**
 
 ```bash
-git clone https://github.com/4linux/527.git
-cd 527/
+git clone https://github.com/joathamp/ataque_em_redes.git
+cd ataque_em_redes/
 vagrant up
 ```
 
@@ -360,10 +356,10 @@ Após a finalização, teremos quatro máquinas virtuais disponíveis com as seg
 
 Nome       | vCPUs | Memória RAM | IP            | Box
 ---------- |:-----:|:-----------:|:-------------:|:---------------------:
-testing    | 1     | 3072MB      | 192.168.56.10 | 4linux/527-testing
-automation | 1     | 3072MB      | 192.168.56.20 | 4linux/527-automation
-logging    | 1     | 4092MB      | 192.168.56.30 | 4linux/527-logging
-validation | 1     | 2048MB      | 192.168.56.40 | 4linux/527-validation
+SD    | 1     | 3072MB      | 192.168.56.110 | joatham/Daryus_SD
+MR | 1     | 3072MB      | 192.168.56.120 | joatham/Daryus_MR
+XXXXX    | 1     | 4092MB      | 192.168.56.130 | XXXXXX
+XXXX | 1     | 2048MB      | 192.168.56.140 | XXXXXX
 
 Para deixar as máquinas desligadas enquanto não as utilizamos, é possível executar o seguinte comando:
 
@@ -385,5 +381,38 @@ vagrant halt {nome-da-maquina} #desligar uma máquina especifica
 
 [5]: [Vagrant](https://www.vagrantup.com)
 
-[6]: [Github da 4Linux](https://github.com/4linux)
+Contato
+----------------------
 
+Entre em contato conosco.
+
+Continue aprofundando seus conhecimentos, utilize este material para continuar praticando. 
+
+
+Um forte abraco do Jota e do Vitor e de toda a equipe da Daryus, bons estudos e a gente se ve por ai:
+
+* **Msc. Joatham Pedro**
+  * **Perito Computacional**
+  * **Pentester**
+  * **Mestre em Sistemas e Computação** 
+  * **Analista Sênior de Segurança da Informação - 4Linux** 
+  * **Analista/Gerente de Seguranca - IFTO**   
+  * **Instrutor MBA Cybersecurity Gov TI - FATEC Cuiabá**
+  * **Instrutor  MBA Cybersecurity - IMPACTA**
+  * **Instrutor Pos Graduacao Computação Forense - Daryus**
+  * **Linux Professional Institute I** 
+  * **Linux Professional Institute II** 
+  * **Linux Professional Institute III - Security** 
+  * **Datacenter Techical Specialist** 
+  * **Novell Certified Linux Administrator (CLA)** 
+  * **Computer Hacking Forensic Investigation - C|HFI** 
+  * **Ec-Concil Incident Handler - EC|IH** 
+  * **Certified Ethical Hacker - C|EH** 
+  * **Exin Ethical Hacker - EXIN** 
+  * **DevOps Essential Professional - DEPC** 
+  * **Pos-Graduado em Redes de Computadores**
+  * **Bacharel em Ciencia da Computacao**
+  * **https://www.youtube.com/c/EaiQualteupapo**
+  * **https://www.linkedin.com/in/joatham-pedro-44a3351b/**
+  * **https://www.instagram.com/qualteupapo/**
+  * **https://www.instagram.com/joatham.pedro/**
